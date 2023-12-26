@@ -1,0 +1,87 @@
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3em;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+h2 {
+    font-size: 3.2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.7rem;
+}
+
+hero h1 {
+    margin-top: 0;
+    padding-top: 5em;
+}
+
+p { 
+    font-size: 1.8rem;
+}
+
+.hero, .features {
+    text-align: center;
+}
+
+.features > div {
+    margin-top: 5.8em;
+}
+
+
+
+.photos img {
+    width: 305px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0px #000000;
+    border-radius: 16px;
+    
+    
+}
+
+
+
+
+
+.hero {
+    background: linear-gradient(119.54deg, #FFEBCD 8.57%, #FF8B72 91.34%);
+    height: 50em;
+}
+
+.hide-mobile {
+    display: none;
+  }
+@media screen and (min-width: 768px) {
+    .hide-mobile {
+    display: block;
+    }
+    .hero {
+        height: 502px;
+    }
+
+    .hero, .features {
+        text-align: left;
+    }
+    .photos, .photos-1 {
+        display: flex;
+        gap: 3.2em;
+        height: 26em;
+    }
+    .photos-1 div:nth-of-type(2) {
+        align-self: flex-end;
+    }
+}
