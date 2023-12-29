@@ -10,7 +10,8 @@ body {
 
 h1 { 
     font-size: 10rem;
-    margin: 0;
+    margin: 0 0 2rem;
+    line-height: 1;
 }
 
 
@@ -44,7 +45,7 @@ p {
     
 }
 
-.item-4 {
+.item-5 {
     background-color: #365d6b;
     background: url(../assets/sea-01-peq.jpg);
     background-size: cover;
@@ -58,14 +59,14 @@ p {
   
 } */
 
-.item-8 {
+.item-10 {
      background-color: #233054;
      background: url(../assets/sea-02-peq.jpg);
      background-size: cover;
      /* grid-row: 4/5;
      grid-column: 2/3; */
 }
-.item-9 {
+.item-12 {
     background-color: #b67123;
     background: url(../assets/sea-03-peq.jpg);
      background-size: cover;
@@ -73,8 +74,8 @@ p {
     grid-row: 4 / 5; */
 }
 div[class^='item-'] {
-    min-height: 100px;
-    padding: 1.5em;
+    height: auto;
+    /* padding: 1.5em; */
 }
 /* .item-4 {
     grid-row: 2 / 5;
@@ -83,29 +84,61 @@ div[class^='item-'] {
     grid-column: 2 /4;
 } */
 
+
+
+.item-6 > div {
+    display: flex;
+    gap: 1em;
+}
+
+
+.sea {
+    max-width: 94vw;
+    margin: auto;
+    display: grid;
+   
+     
+
+    ; 
+}   
+
 .moon {
     grid-area: moon;
 }
 .sea-scape {
     grid-area: sea-scape;
+    padding: 2em;
 }
 
-.item-5 > div {
+.sky {
+    grid-area: sky;
+}
+
+.street {
+    grid-area: street;
+}
+
+.text-peq {
+    grid-area: text-peq;
     display: flex;
-    gap: 1em;
+}
+
+.text-peq > div {
+    padding: 1em;
 }
 
 @media screen and (min-width: 555px) {
     .sea {
-        display: grid;
+        
         gap: .2em;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr 2fr 2fr;
+        grid-template-columns: 2fr 1fr 1fr 2fr;
+        grid-template-rows: 1fr 3fr 1fr 1fr;
          grid-template-areas: 
-         ". . ."
-         "moon sea-scape sea-scape"
-         
-         "moon . ."
+         "text-peq text-peq text-peq text-peq"
+         "moon sea-scape sea-scape sea-scape"
+         "moon sky sky street"
+         "moon sky sky street"
         ; 
     }   
+   
 }
