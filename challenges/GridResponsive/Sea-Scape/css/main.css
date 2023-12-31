@@ -8,6 +8,10 @@ body {
     height: 100vh;
 }
 
+.wrapper {
+ 
+    height: 100vh;
+}
 h1 { 
     font-size: 10rem;
     margin: 0 0 2rem;
@@ -29,12 +33,7 @@ p {
     margin-top: 0;
 }
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+
 
 .sea {
     
@@ -95,7 +94,7 @@ div[class^='item-'] {
 }
 
 .item-13, .item-14, .item-15, .item-16 {
-    height: 10rem !important;
+    height: 16rem !important;
 }
 /* .item-4 {
     grid-row: 2 / 5;
@@ -151,6 +150,12 @@ div[class^='item-'] {
 }
 
 @media screen and (min-width: 555px) {
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
     .sea {
         
         gap: .2em;
