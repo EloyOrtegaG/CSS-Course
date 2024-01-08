@@ -8,10 +8,6 @@ body {
     height: 100vh;
 }
 
-.wrapper {
- 
-    height: 100vh;
-}
 h1 { 
     font-size: 10rem;
     margin: 0 0 2rem;
@@ -33,7 +29,9 @@ p {
     margin-top: 0;
 }
 
-
+.wrapper { 
+    height: 100vh;
+}
 
 .sea {
     
@@ -94,7 +92,7 @@ div[class^='item-'] {
 }
 
 .item-13, .item-14, .item-15, .item-16 {
-    height: 16rem !important;
+    height: 10rem !important;
 }
 /* .item-4 {
     grid-row: 2 / 5;
@@ -154,7 +152,7 @@ div[class^='item-'] {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+     
     }
     .sea {
         

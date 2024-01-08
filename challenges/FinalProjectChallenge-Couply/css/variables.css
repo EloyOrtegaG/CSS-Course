@@ -1,0 +1,9 @@
+:root {
+  --primary-color: #E8F5E2;
+  --primary-color-dark-01: #C6DBBD;
+  --primary-color-dark-02: #9BC588;
+  --primary-color-dark-03: #608A4D;
+  --secondary-color: #000000;
+  --link-color: var(--secondary-color);
+  --border-color: var(--secondary-color);
+}/*# sourceMappingURL=variables.css.map */
