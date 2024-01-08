@@ -8,7 +8,7 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-.hero, footer {
+header, .hero, footer {
   background-color: var(--primary-color);
 }
 
@@ -21,14 +21,17 @@ ul {
   padding: 0;
 }
 
-li, p, a {
+li, p, a:not(nav a) {
   font-size: 1.6rem;
+}
+
+nav a {
+  font-size: 1.8rem;
 }
 
 a {
   color: var(--link-color);
   text-decoration: none;
-  font-family: "Inter", sans-serif;
 }
 
 p {

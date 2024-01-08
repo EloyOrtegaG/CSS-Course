@@ -6,29 +6,37 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2em;
+    padding: 2em;
+    border-bottom: 1px solid var(--secondary-color);
+
     nav ul {
         display: flex;
         gap: 4.2em;
 
         li a.active {
             position: relative;
+
             //border-bottom: 2px solid;
             &::before {
-                content : "";
+                content: "";
                 position: absolute;
-                left    : 0;
-                bottom  : -2px;
-                height  : 3px;
-                width   : 50%;  /* or 100px */
-                border-bottom:2px solid var(--secondary-color);
+                left: 0;
+                bottom: -2px;
+                height: 3px;
+                width: 50%;
+                /* or 100px */
+                border-bottom: 2px solid var(--secondary-color);
 
             }
 
         }
     }
+
     .header-cta {
-        display: flex;
+        
+            display: flex;
+        
+
         justify-content: space-between;
         align-items: center;
         gap: .4em;
@@ -37,187 +45,262 @@ header {
         background: #C6DBBD;
         padding: .4em 1.2em;
     }
-    
+
 
 }
+
 .container {
     padding: 2em;
 }
 
 section.hero {
-    
-    text-align: center;    
+
+    text-align: center;
+
     @media only screen and (min-width: 768px) {
-    
         text-align: left;
-        
     }
+
     h1 {
         font-size: 3.2rem;
         //text-align: center;
-    
         
-    }
+        @media only screen and (min-width:768px) {
+            font-size: 4.5rem;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '';
+                background: url(../assets/4Stars.svg) right top no-repeat;
+                width: 92%;
+                height: 57px;
 
-   
-   .left-column {
-    padding: 2em;
-    .avatars {
-        display: flex;
-        justify-content: center;
-        @media only screen and (min-width: 768px) {
-            justify-content: start;
-        }
-        /*align-items: center;*/
-        
-        .small-avatars img, .featured-avatar img {
-            border-radius: 50%;
-            object-fit: cover;
-            margin-left: -2em;
-            
-        }
-        .small-avatars img {
-            width: 48px;
-            height: 48px;
-            &:not(:first-child) {
-                border:5px solid white;
-                
             }
-            
         }
-        
-    .featured-avatar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #fff;
-        gap: 1em;
-        width: 309px;
-        height: 89px;
-        flex-shrink: 0;
-        border-radius: 44.5px;
-        img {
-            width: 60px;
-            height: 60px;             
     }
-    p { text-align: left; margin: 0;}
-    }
-}
-   }
 
-.right-column {
-    div.num-list {
-        counter-reset: list-number;
-        
-        text-align: left;
-        margin: 2em auto;
-        
+
+    .left-column {
         padding: 2em;
-        border-top: 1px solid var(--secondary-color);
-        > div {
+
+        .avatars {
             display: flex;
-            margin-bottom: 1em;
-            justify-content: start;
-            align-items: start;
+            justify-content: center;
             p {
-                font-size: 2rem;
                 margin-top: 0;
-                strong {
-                    color: var(--primary-color-dark-03);
-                }
+                margin-bottom: .5em;
             }
-          }
-          @media only screen and (min-width: 768px) { 
-            display: flex;
-            gap: 12em;
-            > div {
-                display: block;
-                p {
-                    margin-top: 1em;
-                }
+
+            @media only screen and (min-width: 768px) {
+                justify-content: start;
+                align-items: center;
+                gap: 5em;
             }
-          }
-        
-      }
-     
-      /** Note that we can use counter-increment in :before psuedo element **/
-      div.num-list div:before {
-        counter-increment: list-number;
-        content: counter(list-number);
-        background-color: var(--secondary-color);
-        color: white;
-        border-radius: 50%;
-        width: 29px;
-        height: 29px;
-        display: inline-flex;
-        flex-grow: 0;
-        flex-shrink: 0;
-        justify-content: center;
-        align-items: center;
-        margin-right: 1em;
-        
-    font-size: 1.6rem;
-   
-        
-    
-      }
+
+            /*align-items: center;*/
+.small-avatars {
+    margin-left: 2em;
 }
+            .small-avatars img,
+            .featured-avatar img {
+                border-radius: 50%;
+                object-fit: cover;
+                margin-left: -2em;
+
+            }
+
+            .small-avatars img {
+                width: 48px;
+                height: 48px;
+
+                &:not(:first-child) {
+                    border: 5px solid white;
+
+                }
+
+            }
+
+            .featured-avatar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                gap: 1em;
+                width: 309px;
+                height: 89px;
+                flex-shrink: 0;
+                border-radius: 44.5px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                p {
+                    text-align: left;
+                    margin: 0;
+                }
+                small {
+                    color: #779469;
+                }
+            }
+        }
+    }
+
+    .right-column {
+        div.num-list {
+            counter-reset: list-number;
+
+            text-align: left;
+            margin: 2em auto;
+
+            padding: 2em;
+            border-top: 1px solid var(--secondary-color);
+
+            >div {
+                display: flex;
+                margin-bottom: 1em;
+                justify-content: start;
+                align-items: start;
+
+                p {
+                    font-size: 2rem;
+                    margin-top: 0;
+
+                    strong {
+                        color: var(--primary-color-dark-03);
+                    }
+                }
+            }
+
+            @media only screen and (min-width: 768px) and (max-width:1199px) {
+                display: flex;
+                gap: 12em;
+
+                >div {
+                    display: block;
+
+                    p {
+                        margin-top: 1em;
+                    }
+                }
+            }
+
+        }
+
+        /** Note that we can use counter-increment in :before psuedo element **/
+        div.num-list div:before {
+            counter-increment: list-number;
+            content: counter(list-number);
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            width: 29px;
+            height: 29px;
+            display: inline-flex;
+            flex-grow: 0;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1em;
+
+            font-size: 1.6rem;
 
 
-.cta {
-    /*display: flex;
+
+        }
+    }
+
+
+    .cta {
+        
+        /*display: flex;
     justify-content: center;
     align-items: center;
     
     background-color: var(--primary-color-dark-02);
     border: 2px solid var(--secondary-color);
     margin: 0 auto;*/
-    display: flex;
-    /*width: 342px;
-    height: 56px;*/
-    padding: 9px 6px;
-    margin-bottom: 3rem;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
+       //    display: flex;
+        /*width: 342px;
+    height: 56px;*/    
+    display: inline-block;
+        padding: 14px 20px;
+        margin-bottom: 3rem;
+      
+        gap: 10px;
+        flex-shrink: 0;
 
-    border-radius: 4px;
-border: 2px solid #000;
+        border-radius: 4px;
+        border: 2px solid #000;
 
-background: #9BC588;
+        background: #9BC588;
 
-box-shadow: 4px 4px 0px 0px #000;
- 
- span { flex-grow: 1; font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;}
- svg { flex-basis: content; width: 11px;}
-    
-}
+        box-shadow: 4px 4px 0px 0px #000;
+
+        span {
+            //flex-grow: 1; 
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        svg {
+            flex-basis: content;
+            width: 11px;
+        }
+        @media only screen and (max-width: 767px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+    @media only screen and (min-width: 1200px) { 
+        display: flex;
+        .left-column {
+            flex-basis: 55%;
+        }
+        .right-column {
+            flex-basis: 45%;
+            .num-list {
+            border-top:0 !important;
+            display: block !important;
+            }
+            border-left: 1px solid #000;
+        }
+    }
 
 
 }
 
 .brands {
-    
-    
     background-color: var(--secondary-color);
-    padding: 2em;
+    padding: 2em 2em 10em 2em;
     text-align: center;
+    display: flex;
+    align-items: center;
+
     .logos {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
-        img { 
-            max-width: 100%;
-            height: auto;
-            padding: 2em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        @media only screen and (min-width: 768px) {
+            grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
         }
-}
+
+        img {
+            max-width: 271px;
+            height: auto;
+            padding: 1.25em 2em;
+        }
+    }
+
     a {
         color: white;
+        align-self: center;
     }
 }
 
@@ -227,18 +310,43 @@ box-shadow: 4px 4px 0px 0px #000;
 /*Products*/
 
 .products {
-    
-    margin-top: -6rem;
+
+    margin-top: -12rem;
     display: grid;
     gap: 2em;
+    @media only screen and (min-width: 768px) and (max-width:1199px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    @media only screen and (min-width: 1200px) {
+        grid-template-columns: 1.75fr 0.25fr 0.75fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+
+        .product-01, .product-05 {
+            grid-column: 1/3;
+            .product-title {
+                
+                bottom:0
+            }
+        }
+
+        .product-05 {
+            grid-column: 2/4;
+        }
+    }
     .product {
         background-size: cover;
         min-height: 204px;
+        
+        @media only screen and (min-width: 1200px) {
+            min-height: 261px;
+         
+        }
         position: relative;
 
         border-radius: 4px;
         border: 2px solid #000;
-        
+
         box-shadow: 4px 4px 0px 0px #000;
 
 
@@ -247,29 +355,41 @@ box-shadow: 4px 4px 0px 0px #000;
             font-weight: 700;
             background: white;
             padding: 1.8rem 2rem;
-            position: absolute;
-            top: 0;
+            //position: absolute;
+            //top: 0;
             margin: 0;
             width: 100%;
 
         }
+    > div {
+        background-position: center center;
+    }
         &.product-01 {
             background-image: url(../assets/products/product-01.jpg);
         }
+
         &.product-02 {
             background-image: url(../assets/products/product-02.jpg);
         }
+
         &.product-03 {
             background-image: url(../assets/products/product-03.jpg);
         }
+
         &.product-04 {
             background-image: url(../assets/products/product-04.jpg);
         }
+
         &.product-05 {
             background-image: url(../assets/products/product-05.jpg);
         }
+
         &.product-06 {
             background-image: url(../assets/products/product-06.jpg);
+        }
+        .product-title {
+            position: absolute;
+            width: 100%;
         }
         .product-price {
             font-size: 2.2rem;
@@ -283,50 +403,137 @@ box-shadow: 4px 4px 0px 0px #000;
         }
     }
 }
+
 footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    nav.footer-menu { 
+    
+    nav.footer-menu {
         grid-column: 1/3;
         margin-top: 4rem;
+
+        
+
         ul {
-        display: flex;
-        justify-content: space-around;
-      
+            display: flex;
+            justify-content: space-around;            
+
+            li {
+                font-size: 1.8rem;
+                a {
+                    &.active {
+                        position: relative;
+
+                        //border-bottom: 2px solid;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: -2px;
+                            height: 3px;
+                            width: 50%;
+                            /* or 100px */
+                            border-bottom: 2px solid var(--secondary-color);
+
+                        }
+
+                    }
+                }
+            }
+
+        }
+
+
     }
-}
+
     .copyright {
-        grid-column: 1/3;    
+        grid-column: 1/3;
         text-align: center;
     }
+
     .social-footer {
         .social-icons {
             display: flex;
             justify-content: space-between;
         }
-
+        
+    }
+    
+    @media only screen and (min-width: 768px) {
+        .logo-footer {
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+        .footer-menu {
+            grid-column: 2/3 !important;
+            grid-row: 1/2;
+            margin-top: 0 !important;
+        }
+        .social-footer {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            .social-icons {
+                justify-content: start !important;
+                gap: 2em;
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
+        .copyright {
+            grid-column: 2/3;
+            text-align: right;
+            align-self: end;
+        }
     }
 }
 
 
 
-/* Utils */ 
+/* Utils */
 
 
+.m-0 {
+    margin: 0;
+}
+.p-0 {
+    padding: 0;
+}
 
+.d-flex {
+    display: flex;
+}
 
+.justify-content-center {
+    justify-content: center;
+}
+.align-items-center {
+    align-items: center;
+}
+.gap-1 {
+    gap: 1em;
+}
 
+.text-underline {
+    text-decoration: underline;
+}
 
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: 767px) {
     .hide-mobile {
-        display: block;
-    }    
+        display: none !important;
+    }
 
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width:1199px) {
     .hide-tablet {
-        display: none;
-    }    
+        display: none !important;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+        .hide-desktop {
+            display: none;
+        }
 }

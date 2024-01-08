@@ -18,7 +18,7 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
-.hero, footer {
+header, .hero, footer {
   background-color: var(--primary-color);
 }
 
@@ -31,14 +31,17 @@ ul {
   padding: 0;
 }
 
-li, p, a {
+li, p, a:not(nav a) {
   font-size: 1.6rem;
+}
+
+nav a {
+  font-size: 1.8rem;
 }
 
 a {
   color: var(--link-color);
   text-decoration: none;
-  font-family: "Inter", sans-serif;
 }
 
 p {
@@ -57,7 +60,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2em;
+  padding: 2em;
+  border-bottom: 1px solid var(--secondary-color);
 }
 header nav ul {
   display: flex;
@@ -72,7 +76,8 @@ header nav ul li a.active::before {
   left: 0;
   bottom: -2px;
   height: 3px;
-  width: 50%; /* or 100px */
+  width: 50%;
+  /* or 100px */
   border-bottom: 2px solid var(--secondary-color);
 }
 header .header-cta {
@@ -101,6 +106,19 @@ section.hero {
 section.hero h1 {
   font-size: 3.2rem;
 }
+@media only screen and (min-width: 768px) {
+  section.hero h1 {
+    font-size: 4.5rem;
+    position: relative;
+  }
+  section.hero h1::before {
+    position: absolute;
+    content: "";
+    background: url(../assets/4Stars.svg) right top no-repeat;
+    width: 92%;
+    height: 57px;
+  }
+}
 section.hero .left-column {
   padding: 2em;
 }
@@ -109,12 +127,22 @@ section.hero .left-column .avatars {
   justify-content: center;
   /*align-items: center;*/
 }
+section.hero .left-column .avatars p {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
 @media only screen and (min-width: 768px) {
   section.hero .left-column .avatars {
     justify-content: start;
+    align-items: center;
+    gap: 5em;
   }
 }
-section.hero .left-column .avatars .small-avatars img, section.hero .left-column .avatars .featured-avatar img {
+section.hero .left-column .avatars .small-avatars {
+  margin-left: 2em;
+}
+section.hero .left-column .avatars .small-avatars img,
+section.hero .left-column .avatars .featured-avatar img {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -146,6 +174,9 @@ section.hero .left-column .avatars .featured-avatar p {
   text-align: left;
   margin: 0;
 }
+section.hero .left-column .avatars .featured-avatar small {
+  color: #779469;
+}
 section.hero .right-column {
   /** Note that we can use counter-increment in :before psuedo element **/
 }
@@ -169,7 +200,7 @@ section.hero .right-column div.num-list > div p {
 section.hero .right-column div.num-list > div p strong {
   color: var(--primary-color-dark-03);
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
   section.hero .right-column div.num-list {
     display: flex;
     gap: 12em;
@@ -205,13 +236,11 @@ section.hero .cta {
   background-color: var(--primary-color-dark-02);
   border: 2px solid var(--secondary-color);
   margin: 0 auto;*/
-  display: flex;
   /*width: 342px;
   height: 56px;*/
-  padding: 9px 6px;
+  display: inline-block;
+  padding: 14px 20px;
   margin-bottom: 3rem;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
   flex-shrink: 0;
   border-radius: 4px;
@@ -220,7 +249,6 @@ section.hero .cta {
   box-shadow: 4px 4px 0px 0px #000;
 }
 section.hero .cta span {
-  flex-grow: 1;
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
@@ -230,31 +258,84 @@ section.hero .cta svg {
   flex-basis: content;
   width: 11px;
 }
+@media only screen and (max-width: 767px) {
+  section.hero .cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  section.hero {
+    display: flex;
+  }
+  section.hero .left-column {
+    flex-basis: 55%;
+  }
+  section.hero .right-column {
+    flex-basis: 45%;
+    border-left: 1px solid #000;
+  }
+  section.hero .right-column .num-list {
+    border-top: 0 !important;
+    display: block !important;
+  }
+}
 
 .brands {
   background-color: var(--secondary-color);
-  padding: 2em;
+  padding: 2em 2em 10em 2em;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 .brands .logos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
+@media only screen and (min-width: 768px) {
+  .brands .logos {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+}
 .brands .logos img {
-  max-width: 100%;
+  max-width: 271px;
   height: auto;
-  padding: 2em;
+  padding: 1.25em 2em;
 }
 .brands a {
   color: white;
+  align-self: center;
 }
 
 /*Products*/
 .products {
-  margin-top: -6rem;
+  margin-top: -12rem;
   display: grid;
   gap: 2em;
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .products {
+    grid-template-columns: 1.75fr 0.25fr 0.75fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .products .product-01, .products .product-05 {
+    grid-column: 1/3;
+  }
+  .products .product-01 .product-title, .products .product-05 .product-title {
+    bottom: 0;
+  }
+  .products .product-05 {
+    grid-column: 2/4;
+  }
 }
 .products .product {
   background-size: cover;
@@ -264,15 +345,21 @@ section.hero .cta svg {
   border: 2px solid #000;
   box-shadow: 4px 4px 0px 0px #000;
 }
+@media only screen and (min-width: 1200px) {
+  .products .product {
+    min-height: 261px;
+  }
+}
 .products .product h3 {
   font-size: 1.6rem;
   font-weight: 700;
   background: white;
   padding: 1.8rem 2rem;
-  position: absolute;
-  top: 0;
   margin: 0;
   width: 100%;
+}
+.products .product > div {
+  background-position: center center;
 }
 .products .product.product-01 {
   background-image: url(../assets/products/product-01.jpg);
@@ -291,6 +378,10 @@ section.hero .cta svg {
 }
 .products .product.product-06 {
   background-image: url(../assets/products/product-06.jpg);
+}
+.products .product .product-title {
+  position: absolute;
+  width: 100%;
 }
 .products .product .product-price {
   font-size: 2.2rem;
@@ -316,6 +407,22 @@ footer nav.footer-menu ul {
   display: flex;
   justify-content: space-around;
 }
+footer nav.footer-menu ul li {
+  font-size: 1.8rem;
+}
+footer nav.footer-menu ul li a.active {
+  position: relative;
+}
+footer nav.footer-menu ul li a.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 3px;
+  width: 50%;
+  /* or 100px */
+  border-bottom: 2px solid var(--secondary-color);
+}
 footer .copyright {
   grid-column: 1/3;
   text-align: center;
@@ -324,15 +431,75 @@ footer .social-footer .social-icons {
   display: flex;
   justify-content: space-between;
 }
-
-/* Utils */
-@media only screen and (max-width: 499px) {
-  .hide-mobile {
-    display: block;
+@media only screen and (min-width: 768px) {
+  footer .logo-footer {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  footer .footer-menu {
+    grid-column: 2/3 !important;
+    grid-row: 1/2;
+    margin-top: 0 !important;
+  }
+  footer .social-footer {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  footer .social-footer .social-icons {
+    justify-content: start !important;
+    gap: 2em;
+  }
+  footer .social-footer p {
+    margin-bottom: 0;
+  }
+  footer .copyright {
+    grid-column: 2/3;
+    text-align: right;
+    align-self: end;
   }
 }
-@media only screen and (min-width: 768px) {
+
+/* Utils */
+.m-0 {
+  margin: 0;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.gap-1 {
+  gap: 1em;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
   .hide-tablet {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .hide-desktop {
     display: none;
   }
 }/*# sourceMappingURL=main.css.map */
